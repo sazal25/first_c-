@@ -2,28 +2,36 @@
 using namespace std;
 int main()
 {
-    string s;
-    cin >> s;
-
-    while (1)
-    {
-
-    int pos = s.find("EGYPT");
-
-    if (pos != -1)
-    {
-        s.erase(pos, 5);
-        s.insert(s.begin() + pos, ' ');
-    }
-
-    else
-    {
-        break;
-    }
+    int t;
+    cin >> t;
     
-    }
+    for(int i=0; i<t; i++)
+    {
+        string s,x;
+        cin >> s >> x;
 
-    cout << s << endl;
+        int pos = 0;
+
+        while(1){
+
+        pos = s.find(x,pos);
+
+        if (pos != -1)
+        {
+            s.erase(pos,x.length());
+            s.insert(pos,"#");
+        }
+
+        else
+        {
+            break;
+        }
+
+        }
+
+        cout << s << endl;
+        
+   }
     
     return 0;
 }
